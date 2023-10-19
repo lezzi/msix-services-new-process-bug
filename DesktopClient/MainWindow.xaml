@@ -1,0 +1,62 @@
+﻿<Window
+    x:Class="DesktopClient.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DesktopClient"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Desktop Client"
+    Width="500"
+    Height="550"
+    mc:Ignorable="d">
+    <StackPanel Margin="20" Orientation="Vertical">
+        <StackPanel Margin="0,0,0,8" Orientation="Horizontal">
+            <TextBlock Text="Version: " />
+            <TextBlock x:Name="VersionTextBlock" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Result: " />
+            <TextBlock x:Name="ResultTextBlock" />
+        </StackPanel>
+
+        <Separator Margin="0,16" />
+
+        <TextBlock Text="Step #1: AddPackageByUriAsync with deferred registration" />
+        <Button
+            Width="120"
+            Margin="0,12,0,0"
+            HorizontalAlignment="Left"
+            Click="UpdateButton_OnClick"
+            Content="Update" />
+
+        <Separator Margin="0,16" />
+
+        <TextBlock Text="Step #2: Stop Windows Service" />
+
+        <Button
+            x:Name="StopButton"
+            Width="120"
+            Margin="0,12,0,0"
+            HorizontalAlignment="Left"
+            Click="StopService_Click"
+            Content="Stop Service"
+            IsEnabled="False" />
+
+        <Separator Margin="0,16" />
+
+        <TextBlock Text="Step #3: Init WebView2" />
+
+        <Button
+            x:Name="InitButton"
+            Width="120"
+            Margin="0,12,0,0"
+            HorizontalAlignment="Left"
+            Click="InitWebView2_Click"
+            Content="Init WebView2"
+            IsEnabled="False" />
+
+        <Grid x:Name="WebView2Root" />
+
+    </StackPanel>
+</Window>
